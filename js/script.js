@@ -1,21 +1,24 @@
+
+(function(){
+    'use strict'
+    /* [DONE] delete all links in left column */
+    document.querySelector('.list.titles').innerHTML = ''
+    const articles = document.querySelectorAll('.post')
+
+    /* [DONE] for every article */
+    for(let article of articles) {
+        /* [DONE] find elements with title */
+        const articleTitle = article.querySelector('.post-title')
+
+        /* [DONE] create html code with link */
+        const link = '<li><a href="#' + article.getAttribute('id') + '"><span>' + articleTitle.textContent + '</span></a></li>'
+
+        /* [DONE] insert html with link to link list */
+        document.querySelector('.list.titles').innerHTML += link
+    }
+})()
+
 'use strict'
-
-/* [DONE] delete all links in left column */
-document.querySelector('.list.titles').innerHTML = ''
-const articles = document.querySelectorAll('.post')
-
-/* [DONE] for every article */
-for(let article of articles) {
-    /* [DONE] find elements with title */
-    const articleTitle = article.querySelector('.post-title')
-
-    /* [DONE] create html code with link */
-    const link = '<li><a href="#' + article.getAttribute('id') + '"><span>' + articleTitle.textContent + '</span></a></li>'
-
-    /* [DONE] insert html with link to link list */
-    document.querySelector('.list.titles').innerHTML += link
-}
-  
 const links = document.querySelectorAll('.titles a')
 function titleClickHandler(event){
     event.preventDefault();
