@@ -2,7 +2,8 @@
 
 function generateTitleLinks(){
     /* [DONE] delete all links in left column */
-    document.querySelector('.list.titles').innerHTML = ''
+    const linksList = document.querySelector('.list.titles')
+    linksList.innerHTML = ''
     const articles = document.querySelectorAll('.post')
 
     /* [DONE] for every article */
@@ -14,19 +15,20 @@ function generateTitleLinks(){
         const link = `<li><a href="#${article.getAttribute('id')}"><span>${articleTitle.textContent}</span></a></li>`
 
         /* [DONE] insert html with link to link list */
-        document.querySelector('.list.titles').innerHTML += link
+        linksList.innerHTML += link
     }
 
     const links = document.querySelectorAll('.titles a')
 
-    for(let link of links){
-        link.addEventListener('click', titleClickHandler)
+    linksList.onclick = function(event) {
+        event.preventDefault();
+        let target = event.target
+        if(target.tagName == 'UL' || target.tagName == 'LI') return 
+        titleClickHandler(target.tagName == 'A' ? target : target.parentElement)
     }
 }
 
-function titleClickHandler(event){
-    event.preventDefault();
-
+function titleClickHandler(clickedElement){
     /* [DONE] remove class 'active' from all article links  */
     const activeLinks = document.querySelectorAll('.titles a.active')
     for(let activeLink of activeLinks){
@@ -34,7 +36,6 @@ function titleClickHandler(event){
     }
 
     /* [DONE] add class 'active' to the clicked link */
-    const clickedElement = this
     clickedElement.classList.add('active')
 
     /* [DONE] remove class 'active' from all articles */
