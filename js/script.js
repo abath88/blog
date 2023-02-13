@@ -1,6 +1,6 @@
+'use strict'
 
-(function(){
-    'use strict'
+function generateTitleLinks(){
     /* [DONE] delete all links in left column */
     document.querySelector('.list.titles').innerHTML = ''
     const articles = document.querySelectorAll('.post')
@@ -16,10 +16,14 @@
         /* [DONE] insert html with link to link list */
         document.querySelector('.list.titles').innerHTML += link
     }
-})()
 
-'use strict'
-const links = document.querySelectorAll('.titles a')
+    const links = document.querySelectorAll('.titles a')
+
+    for(let link of links){
+        link.addEventListener('click', titleClickHandler)
+    }
+}
+
 function titleClickHandler(event){
     event.preventDefault();
 
@@ -49,6 +53,4 @@ function titleClickHandler(event){
     activeArticle.classList.add('active')
 }
 
-for(let link of links){
-    link.addEventListener('click', titleClickHandler)
-}
+generateTitleLinks()
