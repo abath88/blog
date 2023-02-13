@@ -18,8 +18,6 @@ function generateTitleLinks(){
         linksList.innerHTML += link
     }
 
-    const links = document.querySelectorAll('.titles a')
-
     linksList.onclick = function(event) {
         event.preventDefault();
         let target = event.target
