@@ -11,7 +11,7 @@ function generateTitleLinks(){
         const articleTitle = article.querySelector('.post-title')
 
         /* [DONE] create html code with link */
-        const link = '<li><a href="#' + article.getAttribute('id') + '"><span>' + articleTitle.textContent + '</span></a></li>'
+        const link = `<li><a href="#${article.getAttribute('id')}"><span>${articleTitle.textContent}</span></a></li>`
 
         /* [DONE] insert html with link to link list */
         document.querySelector('.list.titles').innerHTML += link
