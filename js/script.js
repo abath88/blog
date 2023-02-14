@@ -5,7 +5,7 @@ function generateTitleLinks(customSelector = ''){
   const linksList = document.querySelector('.list.titles');
   linksList.innerHTML = '';
   const articles = document.querySelectorAll(`.post${customSelector}`);
-  console.log(`.post${customSelector}`)
+  console.log(`.post${customSelector}`);
 
   /* [DONE] for every article */
   for(let article of articles) {
