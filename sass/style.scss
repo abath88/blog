@@ -129,6 +129,6 @@ body {
 
 @for $i from 1 through 5 {
   .tag-size-#{$i} {
-    font-size: calc(10px + #{$i *2}px);
+    font-size: calc(10px + #{$i * 2}px);
   }
 }
