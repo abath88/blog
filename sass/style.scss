@@ -82,6 +82,10 @@ body {
   margin: 0;
   padding: 0;
 
+  &.tags li {
+    display: inline;
+  }
+
   .active {
     font-weight: bold;
   }
@@ -117,8 +121,14 @@ body {
 
 .post-tags {
   display: flex;
-  
+
   p {
     margin: 0 10px 0 0;
+  }
+}
+
+@for $i from 1 through 5 {
+  .tag-size-#{$i} {
+    font-size: calc(10px + #{$i *2}px);
   }
 }
