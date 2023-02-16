@@ -5,14 +5,12 @@ const optCloudClassCount = 5;
 const optCloudClassPrefix = 'tag-size-';
 
 function calculateTagsParams(tags) {
-  let minMax = { min: 99999, max: 0 };
+  const values = Object.values(tags);
 
-  for(let tag in tags) {
-    tags[tag] > minMax.max && (minMax.max = tags[tag]);
-    tags[tag] < minMax.min && (minMax.min = tags[tag]);
-  }
-
-  return minMax;
+  return {
+    min: values.length ? Math.min(...values) : 9999,
+    max: values.length ? Math.max(...values) : 1,
+  };
 }
 
 function generateTitleLinks(customSelector = ''){
