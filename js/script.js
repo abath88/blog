@@ -232,7 +232,7 @@ function generateAuthors() {
   for(let author in allAuthors) {
 
     /* [NEW] generate code of a link and add it to allTagsHTML */
-    allAuthorsHTML += `<li><a href="#author-${author.replace(' ', '-')}">${author}(${allAuthors[author]})</a> </li>`;
+    allAuthorsHTML += `<li><a href="#author-${author.replace(' ', '-')}"><span class="author-name">${author}(${allAuthors[author]})</span></a> </li>`;
 
     /* [NEW] ENDLOOP: for each tag in allTags: */
   }
@@ -252,10 +252,6 @@ function authorClickHandler(event){
 
   /* [DONE] make a new constant "tag" and extract tag from the "href" constant */
   const author = href.replace('#author-', '').replace('-', ' ');
-  
-
-  /* [DONE] find all tag links with "href" attribute equal to the "href" constant */
-  const authorLinksWithHref = document.querySelectorAll(`a[href="${href}"]`);
   
   /* [DONE] execute function "generateTitleLinks" with article selector as argument */
   generateTitleLinks(`[data-author="${author}"]`);
