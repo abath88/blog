@@ -1,6 +1,6 @@
 'use strict';
 const optTagsListSelector = '.tags.list';
-const optAuthorsListSelector = '.list.authors'
+const optAuthorsListSelector = '.list.authors';
 const optCloudClassCount = 5;
 const optCloudClassPrefix = 'tag-size-';
 
@@ -215,7 +215,7 @@ function generateAuthors() {
     if(!allAuthors.hasOwnProperty(author)){
       allAuthors[author] = 1;
     } else {
-      allAuthors[author]++
+      allAuthors[author]++;
     }
   }
 
