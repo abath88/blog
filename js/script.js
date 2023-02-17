@@ -156,14 +156,14 @@ function generateAuthors() {
   const authorsList = document.querySelector(optAuthorsListSelector);
   const allAuthorsData = {
     authors: []
-  }
+  };
 
   for(let author in allAuthors) {
     allAuthorsData.authors.push({
       author: author,
       count: allAuthors[author],
       href:author.replace(' ', '-')
-    })
+    });
   }
   authorsList.innerHTML = templates.authorCloudLink(allAuthorsData);
 }
